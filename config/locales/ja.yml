@@ -1,0 +1,141 @@
+---
+ja:
+  button_print: 印刷
+  button_project_menu_easy_gantt: Easyガントチャート
+  button_top_menu_easy_gantt: プロジェクトガントチャート
+  button_use_actual_delay: 実際の遅延日数を使用
+  easy_gantt:
+    button:
+      close_all: すべて閉じる
+      close_all_parent_issues: 全ての親チケットを閉じる
+      create_baseline: ベースライン
+      critical_path: クリティカルパス
+      day_zoom: 日
+      delayed_project_filter: 遅延しているプロジェクトをフィルタする
+      jump_today: 今日に移動
+      load_sample_data: サンプルデータを読み込む
+      month_zoom: 月
+      print_fit: ページに合わせる
+      problem_finder: 課題
+      reload: 再読み込み（保存）
+      remove_delay: タスク間日程を削除
+      resource_management: リソース管理
+      tool_panel: ツール
+      week_zoom: 週
+    critical_path:
+      disabled: 無効
+      last: 最終
+      last_text: 遅延できないチケット
+      longest: 最長
+      longest_text: 最長経路のチケットを表示
+    errors:
+      duplicate_link: 重複した関連は作成できません
+      fresh_milestone: 保存されていないバージョンにはチケットを追加できません。まずバージョンを保存してください。
+      link_target_new: 保存されていないチケットにはリンクを作成できません。まず変更を保存してください。
+      link_target_readonly: 読取専用の対象子チケット
+      loop_link: 循環する関連は作成できません
+      no_rest_api: このEasyガントチャートを使うためには、REST APIを有効にする必要があります。管理⇒設定⇒認証⇒RESTによるWebサービスを有効にする　にチェックをつけてください。
+      overdue: 作業を完了させるか、チケットを閉じてください
+      overmile: チケットの期日は、バージョンの期日より前でなければなりません
+      short_delay: "%{diff} 日以上が必要"
+      too_short: 見積工数に対して、期間が短すぎます
+      unsaved_parent: 保存されていないチケットには、子チケットを追加できません。まず変更を保存してください。
+      unsupported_link_type: サポートされていない関連です
+    gateway:
+      entity_save_failed: "%{entityType} %{entityName} はエラーのため、保存できませんでした"
+      send_failed: 要求は失敗しました
+    label_pro_upgrade: PROにアップグレード
+    link_dir:
+      link_end: 先行している
+      link_start: 後続している
+    popup:
+      add_task:
+        heading: チケットの機能追加
+        text: "チケット／バージョンの追加は、Easyガントチャート PROでのみ使用できます。\r\n<a href=\"https://www.easyredmine.com/easy-gantt-upgrade-to-pro\">PROすると何ができるのか、こちらから確認してください！</a>"
+      baseline:
+        heading: ベースライン機能
+        text: "ベースライン機能は、Easyガントチャート PROでのみ使用できます。\r\n<a href=\"https://www.easyredmine.com/easy-gantt-upgrade-to-pro\">PROすると何ができるのか、こちらから確認してください！</a>"
+      critical:
+        heading: クリティカルパス機能
+        text: "クリティカルパス機能は、Easyガントチャート PROでのみ使用できます。\r\n<a href=\"https://www.easyredmine.com/easy-gantt-upgrade-to-pro\">PROすると何ができるのか、こちらから確認してください！</a>"
+      resource:
+        easy_text: リソース管理プラグインがインストールされていません。 - <a href="https://www.easyredmine.com/pricing-buy">こちらから購入してください！</a>
+        heading: リソース管理機能
+        text: リソース管理機能は<a href="https://www.easyredmine.com/">Easy Redmine</a>でのみ使用できます。
+    reload_modal:
+      label_errors: エラー
+      text_reload_appeal: 保存されていない変更を破棄して、サーバのデータを再読み込みしますか？
+      title: Easyガントチャートを正しく保存できませんでした
+    sample_global_free:
+      text: サンプルデータはクローズできません。全プロジェクト横断のガントチャートは、PROでのみ使用可能です。
+      video:
+        text: 全プロジェクト横断ガントの機能は、こちらから見ることができます。
+        title: 全プロジェクト横断ガントのデモビデオ
+        video_id: zd3M0KYxcXM
+    sample:
+      close_label: このウィンドウを閉じて、実際のプロジェクトデータを読み込む
+      header: サンプルデータが読み込まれました！
+      text: "<strong>全機能をストレスなく試していただくため</strong>、サンプルデータを用意しました。また、便利な使い方を説明したビデオガイドもご用意しています。このウィンドウを閉じると、実際のプロジェクトデータが読み込みます。"
+      video_label: ビデオチュートリアルを見る
+      video:
+        text: Easyガントチャート PROの機能は、こちらから見ることができます
+        title: サンプルビデオ
+        video_id: UHgqfsrD59Q
+    scheme_by:
+      label_by_priority: 優先度別
+      label_by_status: ステータス別
+      label_by_tracker: トラッカー別
+    text_blocker_milestone: マイルストーンによって日程の移動がブロックされています。
+    text_blocker_move_pre: この日程以降に移動するのをブロックしているタスクと関連付けされています。
+    title:
+      button_test: テスト　ボタン（テスト専用）
+      day_zoom: 日単位で表示
+      jump_today: 今日のタイムラインを表示
+      month_zoom: 月単位で表示
+      print_fit: ガントチャートを1ページの大きさにする
+      week_zoom: 週単位で表示
+  easy_printable_templates_categories:
+    easy_gantt: 簡単なガントチャート
+  easy_query:
+    name:
+      easy_gantt_easy_issue_query: Easyガントチャート
+      easy_gantt_easy_project_query: Easyガントチャート（全体）
+  error_easy_gantt_view_permission: Easy Ganttを見る権限がありません。
+  error_epm_easy_gantt_already_active: 既に有効になっています
+  field_easy_gantt_default_zoom: デフォルト表示
+  field_easy_gantt_relation_delay_in_workdays: 関連するチケットの遅延（稼働日）
+  field_easy_gantt_show_holidays: 休日の表示
+  field_easy_gantt_show_project_progress: プロジェクト進捗の表示
+  field_easy_gantt_show_task_soonest_start: 最も早い開始日を表示
+  field_keep_link_delay_in_drag: ドラッグ中に関連付けに設定されている定数よりも遅延が発生
+  field_relation: 関連
+  heading_delay_popup: タスク間の遅延日数設定
+  heading_demo_feature_popup: Coming soon
+  heading_easy_gantts_issues: Easy Gantt Free
+  label_easy_gantt: ガントチャート
+  label_easy_gantt_critical_path: クリティカルパス
+  label_easy_gantt_settings: Easyガントチャートの設定
+  label_filter_group_easy_gantt_easy_issue_query: チケットのフィールド
+  label_finish_to_finish: チケット終了を終了
+  label_parent_issue_plural: 親タスク
+  label_start_to_finish: チケット終了を開始
+  label_start_to_start: チケット開始を開始
+  link_easy_gantt_plugin: https://www.easyredmine.com/easy-gantt-upgrade-to-pro
+  permission_edit_easy_gantt: Easyガントチャートでの変更を許可する
+  permission_edit_global_easy_gantt: Easyガントチャート（全体）を編集
+  permission_edit_personal_easy_gantt: Easyガントチャート（個別）を編集
+  permission_view_easy_gantt: Easyガントチャートを閲覧
+  permission_view_global_easy_gantt: Easyガントチャート（全体）を閲覧
+  permission_view_personal_easy_gantt: Easyガントチャート（個別）を閲覧
+  project_default_page:
+    easy_gantt: Easyガントチャート
+  project_module_easy_gantt: Easyガント
+  text_demo_feature_popup: Coming soon
+  text_easy_gantt_footer: Redmine Gantt powered by Easy
+  text_easy_gantt_keep_link_delay_in_drag: タスクがドラッグされてもタスク間の日程は維持
+  text_easy_gantt_print_easy_gantt_current: 現在のEasy Gantt を表示する（Easy Gantt が読み込まれたページからのみ可能です）
+  text_easy_gantt_relation_delay_in_workdays: 関連するチケットの遅延で、非稼働日をカウントしない
+  text_easy_gantt_show_holidays: ユーザーの休日をガントチャートに表示する（Easy Redmineでのみ有効）
+  text_easy_gantt_show_project_progress: プロジェクトバー上に進捗率を表示する
+  text_easy_gantt_show_task_soonest_start: 親タスク、または関係性から規定されるもっとも影響の少ない日程を表示
+  title_easy_gantt_settings: Easyガントチャートの設定
