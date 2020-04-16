@@ -4,7 +4,7 @@ window.ysy = window.ysy || {};
 ysy.pro = ysy.pro || {};
 ysy.pro.relations = {
   patch: function () {
-    if (!ysy.settings.fixedRelations) {
+    if (ysy.settings.fixedRelations) {
       ysy.pro.relations = null;
       return;
     }

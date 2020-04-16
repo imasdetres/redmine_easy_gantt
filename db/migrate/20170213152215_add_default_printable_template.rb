@@ -1,6 +1,6 @@
 require 'easy_gantt/easy_gantt'
 
-class AddDefaultPrintableTemplate < ActiveRecord::Migration
+class AddDefaultPrintableTemplate < RedmineExtensions::Migration
 
   def up
     return unless EasyGantt.easy_printable_templates?

@@ -2,9 +2,6 @@ module EasyGantt
   module ApplicationHelperPatch
 
     def self.included(base)
-      base.extend(ClassMethods)
-      base.send(:include, InstanceMethods)
-
       base.class_eval do
 
         def link_to_project_with_easy_gantt(project, options = {})
@@ -12,12 +9,6 @@ module EasyGantt
         end
 
       end
-    end
-
-    module InstanceMethods
-    end
-
-    module ClassMethods
     end
 
   end

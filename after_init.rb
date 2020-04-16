@@ -40,7 +40,7 @@ end
 # in this block should be used require_dependency, but only if necessary.
 # better is to place a class in file named by rails naming convency and let it be loaded automatically
 # Here goes query registering, custom fields registering and so on
-ActionDispatch::Reloader.to_prepare do
+RedmineExtensions::Reloader.to_prepare do
   require 'easy_gantt/easy_gantt'
   require 'easy_gantt/hooks'
 
@@ -132,7 +132,7 @@ ActiveSupport.on_load(:easyproject, yield: true) do
 
 end
 
-ActionDispatch::Reloader.to_prepare do
+RedmineExtensions::Reloader.to_prepare do
 
   Redmine::AccessControl.map do |map|
     map.project_module :easy_gantt do |pmap|

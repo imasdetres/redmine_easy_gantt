@@ -30,7 +30,7 @@
             'dhtml_modif',
             'dhtml_addons',
             'dhtml_rewrite',
-            ('dhtml_relations' if EasySetting.value(:easy_gantt_fixed_delay)),
+            ('dhtml_relations' if Setting.parent_issue_dates === "derived"),
             'background',
             'pro_manager',
             'storage',

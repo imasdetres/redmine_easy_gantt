@@ -23,7 +23,7 @@ ysy.view.getGanttBackground = function () {
         strongColorArray.push(Math.floor(component / stronger));
       }
     }
-    return "rgba(" + strongColorArray.join(", ") + ", 0.25)";
+    return "rgba(" + strongColorArray.join(", ") + ", 0.15)";
   }
 
   var backgroundColor = getBackgroundColor();
@@ -141,7 +141,7 @@ ysy.view.getGanttBackground = function () {
           }
         }
         //  -- DARK LIMITS --
-        var darkLimitGroup = svg.group().attr('fill', backgroundColor.replace("0.25)", "0.5)"));
+        var darkLimitGroup = svg.group().attr('fill', backgroundColor.replace("0.2)", "0.3)"));
         var ganttLimits = ysy.data.limits;
         if (ganttLimits.start_date) {
           var left = gantt.posFromDate(ganttLimits.start_date) - gantt.posFromDate(cfg.trace_x[limits.fromX]);

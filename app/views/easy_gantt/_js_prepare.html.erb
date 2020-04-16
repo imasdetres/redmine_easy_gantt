@@ -13,7 +13,7 @@
       holidays: [],
       milestonePush: ((EasyGantt.easy_extensions? && !EasySetting.value('milestone_effective_date_from_issue_due_date')) ? true : false),
       workDayDelays: EasySetting.value(:easy_gantt_relation_delay_in_workdays),
-      fixedRelations: EasySetting.value(:easy_gantt_fixed_delay),
+      fixedRelations: false && EasySetting.value(:easy_gantt_fixed_delay),
       defaultZoom: EasySetting.value(:easy_gantt_default_zoom),
       paths: {
         rootPath: home_path

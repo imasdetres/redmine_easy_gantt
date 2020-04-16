@@ -10,9 +10,6 @@ module EasyGantt
       if Project.table_exists? && Project.column_names.include?('easy_start_date') && Project.column_names.include?('easy_due_date')
         base.send(:include, DatesWithNativeColumns)
       end
-
-      base.class_eval do
-      end
     end
 
     module InstanceMethods
