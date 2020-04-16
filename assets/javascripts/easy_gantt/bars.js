@@ -56,7 +56,14 @@ $.extend(ysy.view.bars, {
     }
     return alloMoment;
   },
-
+  insertCanvas:function (canvas,rootDiv) {
+    var taskLeftElements = rootDiv.getElementsByClassName("task_left");
+    if (taskLeftElements.length === 0) {
+      rootDiv.appendChild(canvas);
+    } else {
+      rootDiv.insertBefore(canvas, taskLeftElements[0]);
+    }
+  },
   canvasListBuilder: function () {
     return {
       __proto__: this.canvasListPrototype

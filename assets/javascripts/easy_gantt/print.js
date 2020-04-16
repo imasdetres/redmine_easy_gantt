@@ -4,17 +4,18 @@ window.ysy = window.ysy || {};
 ysy.pro = ysy.pro || {};
 ysy.pro.print = {
   printPrepared: false,
+  printPreparing: false,
   patch: function () {
     var self = this;
     var mediaQueryList = window.matchMedia('print');
     mediaQueryList.addListener(function (mql) {
       if (mql.matches) {
-        self.beforePrint();
+        // self.beforePrint();
       } else {
         self.afterPrint();
       }
     });
-    window.onbeforeprint = $.proxy(this.beforePrint, this);
+    // window.onbeforeprint = $.proxy(this.beforePrint, this);
     window.onafterprint = $.proxy(this.afterPrint, this);
 
     window.easyModel = window.easyModel || {};
@@ -22,10 +23,18 @@ ysy.pro.print = {
     window.easyModel.print.functions = window.easyModel.print.functions || [];
 
     window.easyModel.print.functions.push(this.printToTemplate);
-
   },
-  directPrint: function () {
-    window.print();
+  directPrint: function (buttonWidget) {
+    var self = this;
+    self.printPreparing = true;
+    buttonWidget.forceRepaint();
+    setTimeout(function () {
+      self.beforePrint();
+      self.printPreparing = false;
+      buttonWidget.forceRepaint();
+      window.print();
+      // self.afterPrint();
+    }, 30);
   },
   beforePrint: function (stripWidth) {
     var self = ysy.pro.print;
@@ -67,12 +76,14 @@ ysy.pro.print = {
     $wrapper3.hide();
     $(".gantt_hor_scroll").hide();
     $wrapper2.append($print);
+    $("body").addClass("gantt-print__body");
     self.printPrepared = true;
 
   },
   afterPrint: function () {
     setTimeout(function () {
       if (!ysy.pro.print.printPrepared) return;
+      $("body").removeClass("gantt-print__body");
       $("#print_area").remove();
 
       $("#wrapper3").show();

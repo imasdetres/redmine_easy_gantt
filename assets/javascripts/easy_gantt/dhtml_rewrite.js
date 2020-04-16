@@ -1,5 +1,14 @@
 /* dhtml_rewrite.js */
 /* global ysy */
+/**
+ * @external Moment
+ */
+// noinspection JSCommentMatchesSignature
+/**
+ * @function moment
+ * @param {*} [arg1]
+ * @return {Moment}
+ */
 window.ysy = window.ysy || {};
 ysy.view = ysy.view || {};
 ysy.view.applyGanttRewritePatch = function () {
@@ -9,7 +18,7 @@ ysy.view.applyGanttRewritePatch = function () {
     var i;
     // Now we specify working days
     var nonWorking = ysy.settings.nonWorkingWeekDays;
-    for (i = 0; i < nonWorking.length; i++) {
+    for (i in nonWorking) {
       work_helper.set_time({day: nonWorking[i] % 7, hours: false});
     }
     // Now we specify holidays
@@ -26,10 +35,7 @@ ysy.view.applyGanttRewritePatch = function () {
     timeformat: "YYYY-MM-DD",
     days: {0: true, 1: true, 2: true, 3: true, 4: true, 5: true, 6: true},
     dates: {},
-    weeks: {},
-    months: {},
     _cache: {},
-    timezone: moment().startOf("day").valueOf() % (1000 * 60 * 60 * 24),
     oneDaySeconds: 1000 * 60 * 60 * 24,
     oneHourSeconds: 1000 * 60 * 60,
     //formatDate: function (date) {
@@ -114,7 +120,7 @@ ysy.view.applyGanttRewritePatch = function () {
       var sumHours = 0;
       var sumDays = 0;
 
-      if ((+from % this.oneDaySeconds) !== this.timezone) {
+      if ((+from % this.oneHourSeconds) !== 0 || from.hours()!==0) {
         var mover = moment(from).startOf("day");
         var first = true;
       } else {
@@ -123,7 +129,8 @@ ysy.view.applyGanttRewritePatch = function () {
       var count = 0;
       while (mover.isBefore(to)) {
         if ((count++) > 3000) {
-          ysy.log.error("while full D");
+          ysy.log.error("_work_times_forward: Probably task with start_date=" + from.format("YYYY-MM-DD")
+              + " and end_date=" + to.format("YYYY-MM-DD") + " is too long");
           break;
         }
         var hours = this.get_working_hours(mover);
@@ -150,7 +157,7 @@ ysy.view.applyGanttRewritePatch = function () {
     _work_times_backward: function (from, to) {
       var sumHours = 0;
       var sumDays = 0;
-      if ((+from % this.oneDaySeconds) !== this.timezone) {
+      if ((+from % this.oneHourSeconds) !== 0 || from.hours()!==0) {
         var mover = moment(from).startOf("day");
         var first = true;
         mover.add(1, "day");
@@ -161,7 +168,8 @@ ysy.view.applyGanttRewritePatch = function () {
       while (mover.isAfter(to)) {
         mover.subtract(1, "days");
         if ((count++) > 3000) {
-          ysy.log.error("while full D");
+          ysy.log.error("_work_times_backward: Probably task with start_date=" + to.format("YYYY-MM-DD")
+              + " and end_date=" + from.format("YYYY-MM-DD") + " is too long");
           break;
         }
         var hours = this.get_working_hours(mover);
@@ -191,9 +199,10 @@ ysy.view.applyGanttRewritePatch = function () {
         return 0;
       }
       var safeFrom = moment(from);
-      var safeTo = to;
       if (to._isEndDate) {
-        safeTo = moment(to).add(1, "days");
+        var safeTo = moment(to).add(1, "days");
+      }else{
+        safeTo = moment(to)
       }
       if (from._isEndDate) {
         safeFrom = safeFrom.add(1, "days");
@@ -216,12 +225,12 @@ ysy.view.applyGanttRewritePatch = function () {
     },
     /**
      *
-     * @param {moment|Date} from
+     * @param {Moment|Date} from
      * @param {boolean} from._isEndDate
      * @param {int} duration
      * @param {string} unit
      * @param {boolean} toIsEndDate
-     * @return {moment|Date}
+     * @return {Moment|Date}
      */
     add_worktime: function (from, duration, unit, toIsEndDate) {
       var hours;
@@ -236,7 +245,7 @@ ysy.view.applyGanttRewritePatch = function () {
       if (from._isEndDate) {
         safeFrom.add(1, "days");
       }
-      if ((+from % this.oneDaySeconds) !== this.timezone) {
+      if ((+from % this.oneHourSeconds) !== 0 || safeFrom.hours()!==0) {
         var mover = moment(safeFrom).startOf("day");
         var diff = safeFrom - mover;
         var first = true;
@@ -250,7 +259,8 @@ ysy.view.applyGanttRewritePatch = function () {
         if (duration === 0) {
           while (true) {
             if (count++ > 3000) {
-              ysy.log.error("while full E");
+              ysy.log.error("_add_worktime: Probably task with start_date=" + moment(from).format("YYYY-MM-DD")
+                  + " and duration " + duration + " is too long");
               break;
             }
             hours = this.get_working_hours(mover);
@@ -266,7 +276,8 @@ ysy.view.applyGanttRewritePatch = function () {
         } else if (duration > 0) {
           while (added < duration) {
             if (count++ > 3000) {
-              ysy.log.error("while full B");
+              ysy.log.error("_add_worktime: Probably task with start_date=" + moment(from).format("YYYY-MM-DD")
+                  + " and duration " + duration + " is too long");
               break;
             }
             hours = this.get_working_hours(mover);
@@ -290,7 +301,8 @@ ysy.view.applyGanttRewritePatch = function () {
         } else {
           while (added < -duration) {
             if (count++ > 3000) {
-              ysy.log.error("while full C");
+              ysy.log.error("_add_worktime: Probably task with end_date=" + moment(from).format("YYYY-MM-DD")
+                  + " and duration " + duration + " is too long");
               break;
             }
             if (!first || !diff) {
@@ -358,7 +370,7 @@ ysy.view.applyGanttRewritePatch = function () {
     },
     /**
      * @param {String} settings.dir
-     * @param {moment|int} settings.date
+     * @param {Moment|int} settings.date
      * @param {String} [settings.unit]
      * @param {int} [settings.length] - minimal size of working span
      * @return {*}

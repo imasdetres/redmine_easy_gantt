@@ -7,7 +7,9 @@ This software is covered by GPL license. You also can obtain Commercial or Enter
 (c) Dinamenta, UAB.
 */
 
-
+body {
+  -webkit-print-color-adjust: exact !important;
+}
 .gridHoverStyle,
 .gridSelection,
 .timelineSelection {
@@ -2027,336 +2029,141 @@ div.dhx_modal_cover {
 /* Vendors */
 /*----------------------------------------*/
 /*----------------------------------------*/
-/* Overides */
-/*----------------------------------------*/
-/*----------------------------------------*/
 /* Mixins & Placeholders */
 /*----------------------------------------*/
+/* line 88, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
+div#easy_gantt.easy .button.active, .easy .easy-gantt__menu-group--tooltiped ul li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* line 97, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
 .easy-gantt__menu .gantt-menu-problems-count.gantt-with-problems {
-  -webkit-border-radius: 5000px !important;
-  -moz-border-radius: 5000px !important;
-  border-radius: 5000px !important; }
+  -webkit-border-radius: 5000px;
+  -moz-border-radius: 5000px;
+  border-radius: 5000px;
+}
 
-div#easy_gantt.easy .button.active, .easy .easy-gantt__menu-group--tooltiped li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul {
-  -webkit-border-radius: 1.8px;
-  -moz-border-radius: 1.8px;
-  border-radius: 1.8px; }
+/* line 118, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul {
+  -webkit-box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.125);
+  box-shadow: 0px 0px 5px 0 rgba(0, 0, 0, 0.125);
+}
 
+/* line 130, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
+div#easy_gantt.easy .active.button {
+  -webkit-box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0px 1px 10px 0px rgba(0, 0, 0, 0.125);
+}
+
+/* line 305, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
 .easy-gantt__menu {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
+/* line 502, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
 .easy-gantt__menu {
   display: -webkit-box;
   display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: -webkit-flex;
+  display: flex;
+}
 
+/* line 524, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
 .easy-gantt__menu {
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
+/* line 551, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/css3.scss */
 .easy-gantt__menu {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
-.easy .easy-gantt__menu-group--tooltiped li {
-  font-family: "Ubuntu", "Open Sans", sans-serif;
-  font-size: 15px;
+/* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
   line-height: 1.5;
   font-weight: normal;
-  color: #324164; }
+  color: #42321a;
+}
 
-.easy .easy-gantt__menu-group--tooltiped li a {
+@media only screen and (min-resolution: 100dpi) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 960px) and (min-resolution: 100dpi) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 1401px) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1401px) and (min-resolution: 100dpi) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1901px) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1901px) and (min-resolution: 100dpi) {
+  /* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+  .easy .easy-gantt__menu-group--tooltiped ul li {
+    font-size: 17px;
+  }
+}
+
+/* line 98, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/typography.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a {
   -ms-word-break: break-all;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  hyphens: auto; }
+  hyphens: auto;
+}
 
-@-webkit-keyframes icon-blink {
-  from {
-    opacity: 0.25;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    -o-transform: scale(1.25);
-    transform: scale(1.25); } }
-@-moz-keyframes icon-blink {
-  from {
-    opacity: 0.25;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    -o-transform: scale(1.25);
-    transform: scale(1.25); } }
-@-ms-keyframes icon-blink {
-  from {
-    opacity: 0.25;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    -o-transform: scale(1.25);
-    transform: scale(1.25); } }
-@keyframes icon-blink {
-  from {
-    opacity: 0.25;
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1.25);
-    -moz-transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    -o-transform: scale(1.25);
-    transform: scale(1.25); } }
-@-webkit-keyframes spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-@-moz-keyframes spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-@-ms-keyframes spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-@keyframes spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-@-webkit-keyframes spin-inverse {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(-360deg); } }
-@-moz-keyframes spin-inverse {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(-360deg); } }
-@-ms-keyframes spin-inverse {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(-360deg); } }
-@keyframes spin-inverse {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(-360deg); } }
-@-webkit-keyframes translate-x {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-moz-keyframes translate-x {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-ms-keyframes translate-x {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@keyframes translate-x {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-webkit-keyframes translate-y {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-moz-keyframes translate-y {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-ms-keyframes translate-y {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@keyframes translate-y {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-webkit-keyframes translate-menu {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-moz-keyframes translate-menu {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-ms-keyframes translate-menu {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@keyframes translate-menu {
-  100% {
-    -webkit-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
-    transform: translate(0, 0); } }
-@-webkit-keyframes load7 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em; }
-  40% {
-    box-shadow: 0 2.5em 0 0; } }
-@-moz-keyframes load7 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em; }
-  40% {
-    box-shadow: 0 2.5em 0 0; } }
-@-ms-keyframes load7 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em; }
-  40% {
-    box-shadow: 0 2.5em 0 0; } }
-@keyframes load7 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em; }
-  40% {
-    box-shadow: 0 2.5em 0 0; } }
-@-webkit-keyframes ripple {
-  0% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    opacity: .2; }
-  100% {
-    -webkit-transform: scale(3);
-    -moz-transform: scale(3);
-    -ms-transform: scale(3);
-    -o-transform: scale(3);
-    transform: scale(3);
-    opacity: 0; } }
-@-moz-keyframes ripple {
-  0% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    opacity: .2; }
-  100% {
-    -webkit-transform: scale(3);
-    -moz-transform: scale(3);
-    -ms-transform: scale(3);
-    -o-transform: scale(3);
-    transform: scale(3);
-    opacity: 0; } }
-@-ms-keyframes ripple {
-  0% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    opacity: .2; }
-  100% {
-    -webkit-transform: scale(3);
-    -moz-transform: scale(3);
-    -ms-transform: scale(3);
-    -o-transform: scale(3);
-    transform: scale(3);
-    opacity: 0; } }
-@keyframes ripple {
-  0% {
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-    -ms-transform: scale(0);
-    -o-transform: scale(0);
-    transform: scale(0);
-    opacity: .2; }
-  100% {
-    -webkit-transform: scale(3);
-    -moz-transform: scale(3);
-    -ms-transform: scale(3);
-    -o-transform: scale(3);
-    transform: scale(3);
-    opacity: 0; } }
-.easy .easy-gantt__menu-group--tooltiped li a.submenu:after, .easy-gantt__icon:before {
+/* line 1, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/icons.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu:after, .easy-gantt__icon:before {
   speak: none;
   font-weight: normal;
   font-style: normal;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
   display: inline-block;
   width: auto;
   height: auto;
@@ -2364,89 +2171,129 @@ div#easy_gantt.easy .button.active, .easy .easy-gantt__menu-group--tooltiped li 
   background-repeat: repeat;
   background-image: none;
   vertical-align: baseline;
-  text-decoration: none !important;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  font-feature-settings: 'liga'; }
+}
 
-.easy .easy-gantt__menu-group--tooltiped li a.submenu:after, .easy-gantt__icon:before {
-  font-family: 'Material Icons','EasyIcons'; }
+/* line 21, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/icons.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu:after, .easy-gantt__icon:before {
+  font-family: "EasyIcons";
+}
 
+/* line 24, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/icons.scss */
 .easy-gantt__icon {
   position: relative;
   background-repeat: no-repeat;
-  background-image: none !important; }
+  background-image: none !important;
+}
 
-.gantt_task_scale, .gantt_grid_scale {
-  -webkit-box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1); }
+/* line 2, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/pseudo.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children:after, .easy .easy-gantt__menu-group--tooltiped ul li > .menu-children:before {
+  content: "";
+  display: block;
+  z-index: 1;
+}
 
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul, .easy-gantt__menu .gantt-menu-problems-list {
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.1); }
+/* line 7, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/pseudo.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children {
+  position: relative;
+}
 
-.easy .easy-gantt__menu-group--tooltiped ul {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1); }
+/* line 12, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/pseudo.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children:after {
+  position: absolute;
+}
 
-.contextual div#easy_gantt.easy .button.active, div#easy_gantt.easy .contextual .button.active {
-  padding: 3px 6px !important;
-  font-size: 0.89em; }
-.contextual div#easy_gantt.easy .icon.button.active, div#easy_gantt.easy .contextual .icon.button.active {
-  padding-left: 36px !important; }
-.contextual div#easy_gantt.easy .icon.button.active:before, div#easy_gantt.easy .contextual .icon.button.active:before {
-  width: 36px !important;
-  font-size: 15px; }
-#sidebar .contextual div#easy_gantt.easy .button.active, .contextual div#easy_gantt.easy #sidebar .button.active, #sidebar div#easy_gantt.easy .contextual .button.active, div#easy_gantt.easy .contextual #sidebar .button.active, #easy_grid_sidebar .contextual div#easy_gantt.easy .button.active, .contextual div#easy_gantt.easy #easy_grid_sidebar .button.active, #easy_grid_sidebar div#easy_gantt.easy .contextual .button.active, div#easy_gantt.easy .contextual #easy_grid_sidebar .button.active {
-  display: inline-block !important; }
+/* line 19, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/pseudo.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children:before {
+  position: absolute;
+}
 
+/* line 16, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+.splitcontent .contextual div#easy_gantt.easy .button.active, div#easy_gantt.easy .splitcontent .contextual .button.active {
+  padding: 2.5px 5px !important;
+  font-size: 0.89em;
+}
+
+/* line 19, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+.splitcontent .contextual div#easy_gantt.easy .icon.button.active, div#easy_gantt.easy .splitcontent .contextual .icon.button.active {
+  padding-left: 30px !important;
+}
+
+/* line 21, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+.splitcontent .contextual div#easy_gantt.easy .icon.button.active:before, div#easy_gantt.easy .splitcontent .contextual .icon.button.active:before {
+  width: 30px !important;
+  font-size: 1.1em;
+}
+
+/* line 26, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+#sidebar .splitcontent .contextual div#easy_gantt.easy .button.active, .splitcontent .contextual div#easy_gantt.easy #sidebar .button.active, #sidebar div#easy_gantt.easy .splitcontent .contextual .button.active, div#easy_gantt.easy .splitcontent .contextual #sidebar .button.active, #easy_grid_sidebar .splitcontent .contextual div#easy_gantt.easy .button.active, .splitcontent .contextual div#easy_gantt.easy #easy_grid_sidebar .button.active, #easy_grid_sidebar div#easy_gantt.easy .splitcontent .contextual .button.active, div#easy_gantt.easy .splitcontent .contextual #easy_grid_sidebar .button.active {
+  display: inline-block !important;
+}
+
+/* line 46, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+div#easy_gantt.easy .icon.button.active:before {
+  position: absolute;
+  left: 0;
+  width: 30px;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1;
+  color: inherit;
+  top: 50%;
+  margin-top: -0.5em;
+}
+
+/* line 58, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 #sidebar div#easy_gantt.easy .icon.button.active, div#easy_gantt.easy #sidebar .icon.button.active, #easy_grid_sidebar div#easy_gantt.easy .icon.button.active, div#easy_gantt.easy #easy_grid_sidebar .icon.button.active {
-  padding-left: 48px !important; }
-#sidebar div#easy_gantt.easy .icon.button.active:before, div#easy_gantt.easy #sidebar .icon.button.active:before, #easy_grid_sidebar div#easy_gantt.easy .icon.button.active:before, div#easy_gantt.easy #easy_grid_sidebar .icon.button.active:before {
-  width: 48px !important; }
+  padding-left: 40px !important;
+}
 
+/* line 60, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+#sidebar div#easy_gantt.easy .icon.button.active:before, div#easy_gantt.easy #sidebar .icon.button.active:before, #easy_grid_sidebar div#easy_gantt.easy .icon.button.active:before, div#easy_gantt.easy #easy_grid_sidebar .icon.button.active:before {
+  width: 40px !important;
+}
+
+/* line 64, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 div#easy_gantt.easy .button.active {
-  font-weight: normal;
-  text-transform: uppercase;
+  font-size: 0.89em;
+  font-weight: bold;
   display: inline-block;
   border: 1px solid transparent;
-  padding: 6px 12px;
+  padding: 5px 10px;
   text-align: left;
   cursor: pointer;
   position: relative;
   vertical-align: middle;
-  font-size: 0.89em; }
-div#easy_gantt.easy .button.active:focus {
-  outline: none; }
+}
+
+/* line 75, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 div#easy_gantt.easy .icon.button.active {
-  padding-left: 36px; }
+  padding-left: 30px;
+}
+
+/* line 82, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 #sidebar div#easy_gantt.easy .button.active, div#easy_gantt.easy #sidebar .button.active, #easy_grid_sidebar div#easy_gantt.easy .button.active, div#easy_gantt.easy #easy_grid_sidebar .button.active {
   display: block;
   position: relative !important;
   z-index: 2;
-  margin-bottom: 3px; }
+  padding-left: 20px;
+  margin-bottom: 3px;
+}
+
 @media only screen and (min-width: 641px) {
+  /* line 93, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
   .nosidebar #sidebar div#easy_gantt.easy .button.active:hover, div#easy_gantt.easy .nosidebar #sidebar .button.active:hover, .nosidebar #easy_grid_sidebar div#easy_gantt.easy .button.active:hover, div#easy_gantt.easy .nosidebar #easy_grid_sidebar .button.active:hover {
     -webkit-animation: sidebar-buttons-slide-left 0.25s forwards;
     -moz-animation: sidebar-buttons-slide-left 0.25s forwards;
     -ms-animation: sidebar-buttons-slide-left 0.25s forwards;
     -o-animation: sidebar-buttons-slide-left 0.25s forwards;
-    animation: sidebar-buttons-slide-left 0.25s forwards; } }
-.form-actions div#easy_gantt.easy .button.active, div#easy_gantt.easy .form-actions .button.active, .ui-dialog-buttonset div#easy_gantt.easy .button.active, div#easy_gantt.easy .ui-dialog-buttonset .button.active {
-  margin: 3px 6px; }
+    animation: sidebar-buttons-slide-left 0.25s forwards;
+  }
+}
+
+/* line 99, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
+.form-actions div#easy_gantt.easy .button.active, div#easy_gantt.easy .form-actions .button.active {
+  margin: 3px 0;
+}
 
 @-webkit-keyframes sidebar-buttons-slide-left {
   from {
@@ -2454,314 +2301,574 @@ div#easy_gantt.easy .icon.button.active {
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
-    transform: translate(0, 0); }
+    transform: translate(0, 0);
+  }
   to {
-    -webkit-transform: translate(-184px, 0);
-    -moz-transform: translate(-184px, 0);
-    -ms-transform: translate(-184px, 0);
-    -o-transform: translate(-184px, 0);
-    transform: translate(-184px, 0); } }
+    -webkit-transform: translate(-200px, 0);
+    -moz-transform: translate(-200px, 0);
+    -ms-transform: translate(-200px, 0);
+    -o-transform: translate(-200px, 0);
+    transform: translate(-200px, 0);
+  }
+}
+
 @-moz-keyframes sidebar-buttons-slide-left {
   from {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
-    transform: translate(0, 0); }
+    transform: translate(0, 0);
+  }
   to {
-    -webkit-transform: translate(-184px, 0);
-    -moz-transform: translate(-184px, 0);
-    -ms-transform: translate(-184px, 0);
-    -o-transform: translate(-184px, 0);
-    transform: translate(-184px, 0); } }
+    -webkit-transform: translate(-200px, 0);
+    -moz-transform: translate(-200px, 0);
+    -ms-transform: translate(-200px, 0);
+    -o-transform: translate(-200px, 0);
+    transform: translate(-200px, 0);
+  }
+}
+
 @-ms-keyframes sidebar-buttons-slide-left {
+  /* line 110, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
   from {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
-    transform: translate(0, 0); }
+    transform: translate(0, 0);
+  }
+  /* line 113, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
   to {
-    -webkit-transform: translate(-184px, 0);
-    -moz-transform: translate(-184px, 0);
-    -ms-transform: translate(-184px, 0);
-    -o-transform: translate(-184px, 0);
-    transform: translate(-184px, 0); } }
+    -webkit-transform: translate(-200px, 0);
+    -moz-transform: translate(-200px, 0);
+    -ms-transform: translate(-200px, 0);
+    -o-transform: translate(-200px, 0);
+    transform: translate(-200px, 0);
+  }
+}
+
 @keyframes sidebar-buttons-slide-left {
   from {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     -o-transform: translate(0, 0);
-    transform: translate(0, 0); }
+    transform: translate(0, 0);
+  }
   to {
-    -webkit-transform: translate(-184px, 0);
-    -moz-transform: translate(-184px, 0);
-    -ms-transform: translate(-184px, 0);
-    -o-transform: translate(-184px, 0);
-    transform: translate(-184px, 0); } }
+    -webkit-transform: translate(-200px, 0);
+    -moz-transform: translate(-200px, 0);
+    -ms-transform: translate(-200px, 0);
+    -o-transform: translate(-200px, 0);
+    transform: translate(-200px, 0);
+  }
+}
+
+/* line 152, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 div#easy_gantt.easy .button.active {
-  line-height: 22px;
-  min-height: 22px;
-  background: #0080e6;
-  border-color: #0080e6;
-  color: #ffffff; }
+  line-height: 18px;
+  min-height: 18px;
+  background: #007aad;
+  border-color: #004461;
+  color: #ffffff;
+}
+
+/* line 126, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 div#easy_gantt.easy .button.active:hover {
   color: #ffffff;
   text-decoration: none;
-  background: #0072cd;
-  border-color: #0072cd; }
+  background: #006894;
+}
+
+/* line 131, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 div#easy_gantt.easy .selected.button.active {
-  background: #0072cd;
-  border-color: #0072cd;
-  color: rgba(255, 255, 255, 0.75); }
+  background: #006894;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* line 135, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/buttons.scss */
 .ui-widget-content div#easy_gantt.easy .button.active, div#easy_gantt.easy .ui-widget-content .button.active {
-  color: #ffffff; }
+  color: #ffffff;
+}
 
-div#easy_gantt.easy .icon.button.active:before {
-  position: absolute;
-  left: 0;
-  width: 36px;
-  text-align: center;
-  font-size: 1.25em;
-  line-height: 1;
-  color: inherit;
-  top: 50%;
-  margin-top: -0.5em; }
-
-.easy .easy-gantt__menu-group--tooltiped li a.submenu:after {
+/* line 183, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/forms.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu:after {
   position: absolute;
   right: 1px;
   top: 1px;
   bottom: 1px;
-  font-size: 15px;
+  font-size: 1em;
   line-height: 2.25;
   margin: 0;
   padding: 0;
   display: block;
   background: none;
   border: none;
-  min-width: 24px;
-  text-align: center; }
-.easy .easy-gantt__menu-group--tooltiped li a.submenu:after {
+  min-width: 20px;
+  text-align: center;
+}
+
+/* line 197, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/forms.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu:after {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
-.easy .easy-gantt__menu-group--tooltiped li a.submenu:after span {
-  display: none; }
+  bottom: 0;
+}
 
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul {
+/* line 204, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/forms.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu:after span {
+  display: none;
+}
+
+/* line 124, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/pseudo.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children:before {
+  left: -5px;
+  right: auto;
+  top: 6px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #dfccaf;
+  border-left: none;
+}
+
+/* line 130, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/pseudo.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children:after {
+  left: -4px;
+  right: auto;
+  top: 6px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #ffffff;
+  border-left: none;
+}
+
+/* line 32, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/tooltips.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul {
   position: absolute;
   background-color: #ffffff;
-  color: #324164;
+  border: 1px solid #dfccaf;
+  color: #42321a;
   padding: 0.5em;
-  font-size: 0.89em;
+  font-size: 11.57px;
   line-height: 1;
   margin-top: -0.25em;
-  white-space: pre; }
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children a, .easy .easy-gantt__menu-group--tooltiped ul a {
-  color: #324164; }
-.input-append .easy .easy-gantt__menu-group--tooltiped li > .menu-children, .easy .easy-gantt__menu-group--tooltiped .input-append li > .menu-children, .input-append .easy .easy-gantt__menu-group--tooltiped ul, .easy .easy-gantt__menu-group--tooltiped .input-append ul {
-  font-weight: normal;
-  margin-top: 1px; }
+  white-space: pre;
+}
 
-.easy .easy-gantt__menu-group--tooltiped li {
+/* line 42, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/tooltips.scss */
+.easy .easy-gantt__menu-group--tooltiped ul a {
+  color: #42321a;
+  text-decoration: underline;
+}
+
+/* line 46, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/tooltips.scss */
+.input-append .easy .easy-gantt__menu-group--tooltiped ul li > .menu-children, .easy .easy-gantt__menu-group--tooltiped ul .input-append li > .menu-children, .input-append .easy .easy-gantt__menu-group--tooltiped ul, .easy .easy-gantt__menu-group--tooltiped .input-append ul {
+  font-weight: normal;
+  margin-top: 1px;
+}
+
+/* line 1, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li {
   padding: 0;
-  padding-left: 36px;
+  padding-left: 30px;
   border: 1px solid transparent;
   border-left: none;
   border-right: none;
   position: relative;
-  line-height: 1.25; }
-.easy .easy-gantt__menu-group--tooltiped li:hover {
-  border-color: aliceblue !important;
-  background: aliceblue !important;
-  z-index: 1; }
-.easy .easy-gantt__menu-group--tooltiped li a {
-  padding: 6px 12px;
-  padding-left: 48px;
-  margin-left: -36px;
+  line-height: 1.25;
+}
+
+/* line 10, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li:hover {
+  border-color: #fcf1f0 !important;
+  background: #fcf1f0 !important;
+  z-index: 1;
+}
+
+/* line 15, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a {
+  padding: 5px 10px;
+  padding-left: 40px;
+  margin-left: -30px;
   display: block;
-  text-decoration: none; }
-.easy .easy-gantt__menu-group--tooltiped li a.active {
-  color: #fe7d99;
+  text-decoration: none;
+}
+
+/* line 22, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.active {
+  color: #e50026;
   background: none;
-  border: none; }
-.easy .easy-gantt__menu-group--tooltiped li a.active:before {
-  color: #fe7d99; }
-.easy .easy-gantt__menu-group--tooltiped li a:before {
+  border: none;
+}
+
+/* line 26, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.active:before {
+  color: #e50026;
+}
+
+/* line 30, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a:before {
   position: absolute;
   left: 0;
-  width: 36px;
+  width: 30px;
   text-align: center;
   padding-top: 1px;
-  color: #324164; }
-.easy .easy-gantt__menu-group--tooltiped li a.submenu {
+  color: #42321a;
+}
+
+/* line 38, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu {
   padding-right: 0 !important;
   background: none !important;
-  position: relative; }
-.easy .easy-gantt__menu-group--tooltiped li a.submenu:after {
+  position: relative;
+}
+
+/* line 42, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a.submenu:after {
   content: "\005d" !important;
   left: auto;
   font-size: 10px;
   text-align: left;
-  line-height: 1.9; }
-.easy .easy-gantt__menu-group--tooltiped li a ~ span {
-  font-size: 0.89em; }
+  line-height: 1.9;
+}
 
-.easy .easy-gantt__menu-group--tooltiped {
-  position: relative; }
+/* line 51, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li a ~ span {
+  font-size: 0.89em;
+}
+
+/* line 56, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
 .easy .easy-gantt__menu-group--tooltiped ul {
-  z-index: 600;
+  z-index: 1000;
   margin: 0;
   list-style: none;
   font-size: 1.125em;
   min-width: 200px;
-  padding: 6px 0;
-  white-space: normal !important; }
+  padding: 5px 0;
+  white-space: normal !important;
+}
+
+/* line 66, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
 .easy .easy-gantt__menu-group--tooltiped ul:after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   right: auto;
-  left: 36px;
-  border-left: 1px solid #e5e5e5;
-  z-index: 0; }
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children {
+  left: 30px;
+  border-left: 1px solid #eee3d4;
+  z-index: 0;
+}
+
+/* line 78, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children {
   display: none;
   white-space: normal;
   top: 6px;
   left: 99%;
-  width: 150px; }
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children > li + li {
-  border-top: 1px dashed #e5e5e5; }
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children > li a {
+  width: 150px;
+}
+
+/* line 86, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children > li + li {
+  border-top: 1px dashed #eee3d4;
+}
+
+/* line 89, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children > li a {
   text-decoration: none;
   display: block;
-  padding: 0.5em; }
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children > li a:hover {
-  text-decoration: underline; }
-.easy .easy-gantt__menu-group--tooltiped li > .menu-children > li a:before {
-  color: #01c8a9;
+  padding: 0.5em;
+}
+
+/* line 93, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children > li a:hover {
+  text-decoration: underline;
+}
+
+/* line 96, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li > .menu-children > li a:before {
+  color: #4ebf67;
   text-decoration: none;
-  margin-right: 6px; }
-.easy .easy-gantt__menu-group--tooltiped li:hover > .menu-children {
-  display: inline-block; }
+  margin-right: 5px;
+}
 
+/* line 105, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped ul li:hover > .menu-children {
+  display: inline-block;
+}
+
+/* line 111, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/menus.scss */
+.easy .easy-gantt__menu-group--tooltiped {
+  position: relative;
+}
+
+/* line 17, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/material/material__elevation.scss */
+.gantt_task_scale, .gantt_grid_scale {
+  -webkit-box-shadow: material__elevation--shadow_bottom(1), material__elevation--shadow_top(1);
+  -moz-box-shadow: material__elevation--shadow_bottom(1), material__elevation--shadow_top(1);
+  box-shadow: material__elevation--shadow_bottom(1), material__elevation--shadow_top(1);
+}
+
+/* line 20, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/material/material__elevation.scss */
+.easy-gantt__menu .gantt-menu-problems-list {
+  -webkit-box-shadow: material__elevation--shadow_bottom(2), material__elevation--shadow_top(2);
+  -moz-box-shadow: material__elevation--shadow_bottom(2), material__elevation--shadow_top(2);
+  box-shadow: material__elevation--shadow_bottom(2), material__elevation--shadow_top(2);
+}
+
+/* line 26, plugins/easyproject/easy_plugins/easy_extensions/assets/../../../../easyproject/easy_plugins/easy_extensions/assets/stylesheets/scss/mixins/material/material__elevation.scss */
+.easy .easy-gantt__menu-group--tooltiped ul {
+  -webkit-box-shadow: material__elevation--shadow_bottom(4), material__elevation--shadow_top(4);
+  -moz-box-shadow: material__elevation--shadow_bottom(4), material__elevation--shadow_top(4);
+  box-shadow: material__elevation--shadow_bottom(4), material__elevation--shadow_top(4);
+}
+
+/* line 10, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .easy-gantt__icon:before {
-  font-family: "Material Icons", sans-serif; }
-.easy-gantt__icon--open:before {
-  content: "\e147"; }
-.easy-gantt__icon--close:before {
-  content: "\e15c"; }
+  font-family: "Material Icons", sans-serif;
+}
 
+/* line 14, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
+.easy-gantt__icon--open:before {
+  content: "\e147";
+}
+
+/* line 14, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
+.easy-gantt__icon--close:before {
+  content: "\e15c";
+}
+
+/* line 25, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon {
-  margin-right: 7px; }
+  margin-right: 7px;
+}
+
+/* line 29, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon.gantt_folder_open {
-  background-image: none; }
+  background-image: none;
+}
+
+/* line 31, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon.gantt_folder_open:before {
-  content: url(data:image/gif;base64,R0lGODlhEgASAJECAJeXl7Gvrf///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTdDRDM3QzVDMDZEMTFFMUJGMzhFMDhCN0RGRjBGQ0YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTdDRDM3QzZDMDZEMTFFMUJGMzhFMDhCN0RGRjBGQ0YiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1N0NEMzdDM0MwNkQxMUUxQkYzOEUwOEI3REZGMEZDRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMzdDNEMwNkQxMUUxQkYzOEUwOEI3REZGMEZDRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAIALAAAAAASABIAAAIzlI+pywcPm3mhWgkCsjBOvVkimElG9ZlCBlXd+2XjjLKg5GqoeZXqvsOQXK/ijUZTKVUFADs=); }
+  content: url(data:image/gif;base64,R0lGODlhEgASAJECAJeXl7Gvrf///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTdDRDM3QzVDMDZEMTFFMUJGMzhFMDhCN0RGRjBGQ0YiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTdDRDM3QzZDMDZEMTFFMUJGMzhFMDhCN0RGRjBGQ0YiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1N0NEMzdDM0MwNkQxMUUxQkYzOEUwOEI3REZGMEZDRiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMzdDNEMwNkQxMUUxQkYzOEUwOEI3REZGMEZDRiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAIALAAAAAASABIAAAIzlI+pywcPm3mhWgkCsjBOvVkimElG9ZlCBlXd+2XjjLKg5GqoeZXqvsOQXK/ijUZTKVUFADs=);
+}
+
+/* line 29, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon.gantt_folder_close {
-  background-image: none; }
+  background-image: none;
+}
+
+/* line 31, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon.gantt_folder_close:before {
-  content: url(data:image/gif;base64,R0lGODlhEgASAJECAJeXl7Gvrf///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTAyMTU1RTNDMDZEMTFFMUJGNzZCRThBRkFCRjg4MTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTAyMTU1RTRDMDZEMTFFMUJGNzZCRThBRkFCRjg4MTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MDIxNTVFMUMwNkQxMUUxQkY3NkJFOEFGQUJGODgxMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MDIxNTVFMkMwNkQxMUUxQkY3NkJFOEFGQUJGODgxMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAIALAAAAAASABIAAAIwlI+pywcPm3mhWgkCsjBOvVkimElG9ZlCuYIY6TYs+6bmHDO4igfdD3GNhheV0VQAADs=); }
+  content: url(data:image/gif;base64,R0lGODlhEgASAJECAJeXl7Gvrf///wAAACH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjAgNjEuMTM0Nzc3LCAyMDEwLzAyLzEyLTE3OjMyOjAwICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTAyMTU1RTNDMDZEMTFFMUJGNzZCRThBRkFCRjg4MTIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTAyMTU1RTRDMDZEMTFFMUJGNzZCRThBRkFCRjg4MTIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1MDIxNTVFMUMwNkQxMUUxQkY3NkJFOEFGQUJGODgxMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1MDIxNTVFMkMwNkQxMUUxQkY3NkJFOEFGQUJGODgxMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAEAAAIALAAAAAASABIAAAIwlI+pywcPm3mhWgkCsjBOvVkimElG9ZlCuYIY6TYs+6bmHDO4igfdD3GNhheV0VQAADs=);
+}
+
+/* line 38, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon.gantt_folder_open:before, .gantt_tree_icon.gantt_folder_close:before {
-  vertical-align: sub; }
+  vertical-align: sub;
+}
+
+/* line 43, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_icons.scss */
 .gantt_tree_icon.gantt_open, .gantt_tree_icon.gantt_close {
   margin-right: 0;
-  margin-left: 7px; }
+  margin-left: 7px;
+}
 
+/* line 16, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .button-important {
-  color: #fff; }
+  color: #fff;
+}
+
+/* line 20, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt-menu-button {
   display: inline-block;
   border-radius: 2px;
   border: 1px solid #e4e4e4;
-  padding: 8px 16px; }
+  padding: 8px 16px;
+}
+
+/* line 27, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt-menu-button.button-positive {
   background-color: #4ebf67;
   border-color: #338d47;
-  color: #ffffff; }
+  color: #ffffff;
+}
+
+/* line 33, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt-menu-button.active, .redmine #easy_gantt.redmine .gantt_button.active {
   background-color: #628DB6;
-  border-color: #3E5B76; }
+  border-color: #3E5B76;
+}
+
+/* line 37, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .problem-finder {
   border: none;
-  padding-right: 0; }
+  padding-right: 0;
+}
+
+/* line 42, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt-menu-button.icon, .redmine .gantt_button.icon {
   padding: 8px 10px 8px 25px;
-  background-position-x: 5px; }
+  background-position-x: 5px;
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-calendar-week {
-  background-image: url("../../../../../images/magnifier.png"); }
+  background-image: url("../../../../../images/magnifier.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-calendar-day {
-  background-image: url("../../../../../images/zoom_in.png"); }
+  background-image: url("../../../../../images/zoom_in.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-calendar-month {
-  background-image: url("../../../../../images/zoom_out.png"); }
+  background-image: url("../../../../../images/zoom_out.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-calendar {
-  background-image: url("../../../../../images/calendar.png"); }
+  background-image: url("../../../../../images/calendar.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-print {
-  background-image: url("../../../../../images/document.png"); }
+  background-image: url("../../../../../images/document.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-plugin {
-  background-image: url("../../../../../images/plugin.png"); }
+  background-image: url("../../../../../images/plugin.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-back {
-  background-image: url("../../../../../images/cancel.png"); }
+  background-image: url("../../../../../images/cancel.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-unlink {
-  background-image: url("../../../../../images/link-break.png"); }
+  background-image: url("../../../../../images/link-break.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-link {
-  background-image: url("../../../../../images/link.png"); }
+  background-image: url("../../../../../images/link.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-youtube {
-  background-image: url("../../../../../images/yt.png"); }
+  background-image: url("../../../../../images/yt.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-settings {
-  background-image: url("../../../../../images/changeset.png"); }
+  background-image: url("../../../../../images/changeset.png");
+}
+
+/* line 47, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-filter {
-  background-image: url("../../../../../images/task_parent_end.png"); }
+  background-image: url("../../../../../images/task_parent_end.png");
+}
+
+/* line 51, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon-youtube {
-  padding-left: 28px; }
+  padding-left: 28px;
+}
+
+/* line 54, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .icon.icon-filter {
   background-position-x: 9px;
-  background-position-y: 7px; }
+  background-position-y: 7px;
+}
+
+/* line 58, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu {
   margin: 0 0 1px;
   padding: 5px 0 5px 0;
-  background-color: white; }
+  background-color: white;
+}
+
+/* line 63, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine #gantt_cont {
   /* width: auto !important; */
-  margin: 0; }
+  margin: 0;
+}
+
+/* line 67, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt_tree_icon {
-  width: 20px; }
+  width: 20px;
+}
+
+/* line 69, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt_tree_icon:before {
-  vertical-align: sub; }
+  vertical-align: sub;
+}
+
+/* line 74, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine a.active {
-  color: #fff; }
+  color: #fff;
+}
+
+/* line 77, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine a.disabled {
   opacity: 0.25;
   color: #484848;
-  font-weight: lighter; }
+  font-weight: lighter;
+}
+
+/* line 82, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine #link_delay_input {
-  width: auto; }
+  width: auto;
+}
+
+/* line 85, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .push-left {
-  float: left; }
+  float: left;
+}
+
+/* line 89, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .push-right {
   float: right;
-  text-align: right; }
+  text-align: right;
+}
+
+/* line 94, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .gantt-footer p {
-  text-align: center; }
+  text-align: center;
+}
+
+/* line 97, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine #button_close_all_projects {
   width: 18px;
   height: 25px;
   padding: 0;
   vertical-align: bottom;
   background-position: 0 50%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+}
+
+/* line 106, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .overdue {
-  color: #e50026; }
+  color: #e50026;
+}
+
+/* line 109, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .contextual {
-  text-align: right; }
+  text-align: right;
+}
+
+/* line 112, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu-group--tooltiped {
-  position: relative; }
+  position: relative;
+}
+
+/* line 114, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu-group--tooltiped ul {
   position: absolute;
   right: 0;
@@ -2770,7 +2877,10 @@ div#easy_gantt.easy .icon.button.active:before {
   padding: 5px;
   padding-left: 0;
   min-width: 180px;
-  display: none; }
+  display: none;
+}
+
+/* line 123, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu-group--tooltiped ul:after {
   content: '';
   position: absolute;
@@ -2778,41 +2888,74 @@ div#easy_gantt.easy .icon.button.active:before {
   bottom: 0;
   right: auto;
   left: 25px;
-  border-left: 1px solid #eee3d4; }
+  border-left: 1px solid #eee3d4;
+}
+
+/* line 132, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu-group--tooltiped ul li {
-  display: block; }
+  display: block;
+}
+
+/* line 135, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu-group--tooltiped ul .gantt-menu-button {
   border: none;
   padding: 5px 5px 5px 30px;
-  background-color: transparent; }
+  background-color: transparent;
+}
+
+/* line 141, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
 .redmine .easy-gantt__menu-group--tooltiped:hover ul {
-  display: block; }
+  display: block;
+}
+
 @media print {
+  /* line 146, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
   .redmine .gantt_task_progress {
     border-right: 1px solid #4ebf67;
     box-sizing: border-box;
     margin-top: 1px;
     margin-bottom: 1px;
-    height: calc(100% - 2px); }
+    height: calc(100% - 2px);
+  }
+  /* line 153, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
   .redmine .wrong .gantt_task_progress {
-    border-color: #e50026; }
+    border-color: #e50026;
+  }
+  /* line 156, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
   .redmine .gantt_project-type .gantt_task_progress {
-    border-color: #009ee0; }
+    border-color: #009ee0;
+  }
+  /* line 159, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_redmine.scss */
   .redmine .odd {
-    background: none; } }
+    background: none;
+  }
+}
 
+/* line 16, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__header-logo {
   vertical-align: middle;
-  display: inline-block; }
+  display: inline-block;
+}
+
+/* line 20, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__header-header {
   display: inline-block;
-  margin: 0; }
+  margin: 0;
+}
+
+/* line 24, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__header-text {
   display: inline-block;
   vertical-align: bottom;
-  margin-left: 20px; }
+  margin-left: 20px;
+}
+
+/* line 31, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__area {
-  background-color: white; }
+  background-color: white;
+}
+
+/* line 35, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__strip {
   border: 1px solid #cecece;
   overflow: hidden;
@@ -2824,21 +2967,39 @@ div#easy_gantt.easy .icon.button.active:before {
   margin-left: -1px;
   display: inline-block;
   background-color: #ffffff;
-  border-left: 0; }
+  border-left: 0;
+}
+
+/* line 40, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__bg-canvas {
   display: block;
-  /*page-break-before:avoid;*/ }
+  /*page-break-before:avoid;*/
+}
+
+/* line 45, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__bg {
   position: absolute;
-  /*page-break-before:avoid;*/ }
+  /*page-break-before:avoid;*/
+}
+
+/* line 50, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__data-area {
-  /*page-break-before:avoid;*/ }
+  /*page-break-before:avoid;*/
+}
+
+/* line 54, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__bars-area {
   position: relative;
-  top: 0; }
+  top: 0;
+}
+
+/* line 59, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__scale {
   transform: none;
-  border-top: 0; }
+  border-top: 0;
+}
+
+/* line 64, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__grid {
   border: 1px solid #cecece;
   overflow: hidden;
@@ -2851,200 +3012,354 @@ div#easy_gantt.easy .icon.button.active:before {
   display: inline-block;
   background-color: #ffffff;
   border-right: 2px solid #cecece;
-  margin-right: 1px; }
+  margin-right: 1px;
+}
+
+/* line 68, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__grid .gantt_grid_scale {
-  margin-top: -2px; }
+  margin-top: -2px;
+}
+
+/* line 71, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
 .gantt-print__grid .gantt-grid-header-collapse-buttons,
 .gantt-print__grid .gantt_sort {
-  display: none; }
-.gantt-print__template--nowrap {
-  white-space: nowrap; }
+  display: none;
+}
 
+/* line 77, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_print.scss */
+.gantt-print__template--nowrap {
+  white-space: nowrap;
+}
+
+/* line 5, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div#easy_gantt.easy #easy_gantt_menu {
-  padding-bottom: 9px; }
+  padding-bottom: 7px;
+}
+
+/* line 8, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div#easy_gantt.easy #easy_gantt_menu p {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
+
+/* line 12, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div#easy_gantt.easy #gantt_footer_buttons {
   float: left;
-  margin-top: 12px; }
+  margin-top: 10px;
+}
+
+/* line 15, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div#easy_gantt.easy #gantt_footer_buttons + p {
   float: right;
-  margin-top: 12px; }
+  margin-top: 10px;
+}
 
+/* line 25, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 #button_jump_today {
-  padding-right: 0; }
+  padding-right: 0;
+}
 
+/* line 30, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu {
   user-select: none;
   position: relative;
   z-index: 1;
-  background-color: #ffffff;
-  padding: 24px;
-  margin: 0 -24px; }
+  background-color: #fdfbf9;
+  padding: 20px;
+  margin: 0 -20px;
+}
+
+/* line 42, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu:after {
-  display: none; }
+  display: none;
+}
+
+/* line 45, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu-item {
   display: inline-block;
-  text-align: left; }
+  text-align: left;
+}
+
+/* line 48, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu-item .active {
-  color: #fe7d99 !important; }
+  color: #e50026 !important;
+}
+
+/* line 50, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu-item .active:before {
-  color: #fe7d99; }
+  color: #e50026;
+}
+
+/* line 55, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu-group {
-  display: inline-block; }
+  display: inline-block;
+}
+
+/* line 57, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu-group ul {
-  margin: 0; }
+  margin: 0;
+}
+
+/* line 62, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy .easy-gantt__menu-group--tooltiped > ul {
   display: none;
-  right: 0; }
+  right: 0;
+}
+
+/* line 67, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy .easy-gantt__menu-group--tooltiped:hover > ul {
-  display: block; }
+  display: block;
+}
+
+/* line 73, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy .easy-gantt__menu .problem-finder {
   font-size: 0.89em;
-  color: #324164; }
+  color: #42321a;
+}
+
+/* line 76, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy .easy-gantt__menu .problem-finder.active {
   background: none;
   border: none;
-  color: #324164; }
+  color: #42321a;
+}
+
+/* line 81, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy .easy-gantt__menu .problem-finder:hover {
-  text-decoration: none; }
+  text-decoration: none;
+}
+
+/* line 85, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu .gantt-menu-problems-list {
-  border-width: 1px !important; }
+  border-width: 1px !important;
+}
+
+/* line 89, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy-gantt__menu .gantt-menu-problems-count.gantt-with-problems {
   font-weight: bold;
-  background: #fe7d99;
-  border: 1px solid #fe6485;
+  background: #e50026;
+  border: 1px solid #cc0022;
   text-align: center;
-  width: 18px;
-  line-height: 18px;
+  width: 15px;
+  line-height: 15px;
   display: inline-block;
   color: white;
-  padding: 3px;
-  margin-right: 12px; }
+  padding: 2.5px;
+  margin-right: 10px;
+}
 
+/* line 106, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt-menu-sub-panel {
-  width: 100%; }
+  width: 100%;
+}
+
+/* line 108, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt-menu-sub-panel > span {
-  display: none !important; }
+  display: none !important;
+}
 
+/* line 113, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 #button_problem_finder.active {
-  color: #fe7d99 !important;
+  color: #e50026 !important;
   background: none !important;
-  border: none !important; }
+  border: none !important;
+}
 
+/* line 119, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt-menu-problems-reason {
-  color: #fe7d99 !important; }
+  color: #e50026 !important;
+}
 
+/* line 123, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt-grid-milestone-bullet {
   margin-top: 4px !important;
   margin-left: 5px;
-  background: #324164 !important;
-  border: none !important; }
-.gantt-milestone-shared .gantt-grid-milestone-bullet {
-  background: #fa9b3c !important; }
+  background: #42321a !important;
+  border: none !important;
+}
 
+/* line 128, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
+.gantt-milestone-shared .gantt-grid-milestone-bullet {
+  background: #d94838 !important;
+}
+
+/* line 133, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_subtask_arrow:before {
   content: '\21B3';
-  opacity: .75; }
+  opacity: .75;
+}
 
+/* line 138, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_cell + .gantt_cell, .gantt_side_content {
-  color: #324164 !important; }
+  color: #42321a !important;
+}
 
+/* line 142, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_grid .gantt_grid_head_cell, .gantt_grid_scale, #gantt_grid, .gantt_scale_cel, .gantt_task_scale {
-  border-color: #e5e5e5 !important; }
+  border-color: #eee3d4 !important;
+}
 
+/* line 146, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_grid {
-  border-right-width: 1px !important; }
+  border-right-width: 1px !important;
+}
 
+/* line 154, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_grid_data .gantt_row:hover, .gantt_grid_data .gantt_row.odd:hover {
-  background: rgba(254, 125, 153, 0.25); }
-.gantt_grid_data .gantt_row.closed {
-  background-color: rgba(153, 160, 178, 0.5);
-  border-color: #99a0b2; }
-.gantt_grid_data .gantt_row.closed .gantt_tree_content {
-  text-decoration: line-through; }
+  background: rgba(229, 0, 38, 0.25);
+}
 
+/* line 158, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
+.gantt_grid_data .gantt_row.closed {
+  background-color: rgba(223, 204, 175, 0.5);
+  border-color: #dfccaf;
+}
+
+/* line 161, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
+.gantt_grid_data .gantt_row.closed .gantt_tree_content {
+  text-decoration: line-through;
+}
+
+/* line 168, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_task_scale, .gantt_grid_scale {
   z-index: 2 !important;
-  margin-top: -1px; }
+  margin-top: -1px;
+}
 
+/* line 174, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 #gantt_cont {
   width: auto !important;
-  margin: 0 -25px;
-  background: #ffffff; }
+  margin: 0 -21px;
+  background: #ffffff;
+}
 
+/* line 182, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .easy .gantt_tree_indent {
-  width: 24px; }
-.easy .gantt_tree_icon {
-  width: 24px;
-  text-align: center; }
+  width: 20px;
+}
 
+/* line 185, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
+.easy .gantt_tree_icon {
+  width: 20px;
+  text-align: center;
+}
+
+/* line 192, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_progress {
   position: relative;
-  z-index: 1 !important; }
+  z-index: 1 !important;
+}
 
+/* line 199, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_parent_task-subtype .gantt_task_progress, div.gantt_task_line.gantt_parent_task-subtype .gantt_task_content {
-  height: 100%; }
+  height: 100%;
+}
+
+/* line 203, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line .gantt_task_content {
   border-radius: 2px;
   border: 1px solid;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
+
+/* line 208, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line .gantt_task_content,
 div.gantt_task_line .gantt_task_ticks {
-  background-color: rgba(1, 200, 169, 0.1);
-  border-color: #01c8a9; }
+  background-color: rgba(78, 191, 103, 0.1);
+  border-color: #4ebf67;
+}
+
+/* line 213, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line .gantt_task_progress {
-  background-color: rgba(1, 200, 169, 0.5); }
+  background-color: rgba(78, 191, 103, 0.5);
+}
+
+/* line 217, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.wrong .gantt_task_ticks,
 div.gantt_task_line.wrong .gantt_task_content {
-  background-color: rgba(254, 125, 153, 0.1);
-  border-color: #fe7d99; }
+  background-color: rgba(229, 0, 38, 0.1);
+  border-color: #e50026;
+}
+
+/* line 222, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.wrong .gantt_task_progress {
-  background-color: rgba(254, 125, 153, 0.5); }
+  background-color: rgba(229, 0, 38, 0.5);
+}
+
+/* line 227, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.closed .gantt_task_ticks,
 div.gantt_task_line.closed .gantt_task_content {
-  background-color: rgba(153, 160, 178, 0.25);
-  border-color: #99a0b2; }
+  background-color: rgba(223, 204, 175, 0.25);
+  border-color: #dfccaf;
+}
+
+/* line 232, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.closed .gantt_task_progress {
-  background-color: rgba(153, 160, 178, 0.5); }
+  background-color: rgba(223, 204, 175, 0.5);
+}
+
+/* line 237, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_project-type .gantt_task_content {
-  background-color: rgba(0, 128, 230, 0.25);
-  border-color: #0080e6; }
+  background-color: rgba(0, 158, 224, 0.25);
+  border-color: #009ee0;
+}
+
+/* line 241, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_project-type div.gantt_task_progress {
-  background-color: rgba(0, 128, 230, 0.5); }
+  background-color: rgba(0, 158, 224, 0.5);
+}
+
+/* line 245, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_project-type.wrong .gantt_task_content {
-  background-color: rgba(191, 126, 172, 0.25); }
+  background-color: rgba(172, 40, 85, 0.25);
+}
+
+/* line 248, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_project-type.wrong div.gantt_task_progress {
-  background-color: rgba(191, 126, 172, 0.5); }
+  background-color: rgba(172, 40, 85, 0.5);
+}
+
+/* line 254, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_milestone-type .gantt_task_content {
   -webkit-transform: scale(0.65) rotate(45deg);
   -moz-transform: scale(0.65) rotate(45deg);
   -ms-transform: scale(0.65) rotate(45deg);
   -o-transform: scale(0.65) rotate(45deg);
   transform: scale(0.65) rotate(45deg);
-  background-color: #324164;
-  border-color: #324164; }
+  background-color: #42321a;
+  border-color: #42321a;
+}
+
+/* line 260, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.gantt_milestone-type.gantt-milestone-shared .gantt_task_content {
   -webkit-transform: scale(0.65) rotate(45deg);
   -moz-transform: scale(0.65) rotate(45deg);
   -ms-transform: scale(0.65) rotate(45deg);
   -o-transform: scale(0.65) rotate(45deg);
   transform: scale(0.65) rotate(45deg);
-  background-color: #fa9b3c;
-  border-color: #fa9b3c; }
+  background-color: #d94838;
+  border-color: #d94838;
+}
+
+/* line 268, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 div.gantt_task_line.critical .gantt_task_ticks,
 div.gantt_task_line.critical .gantt_task_content {
   background-color: rgba(200, 0, 255, 0.5);
-  border-color: #c800ff; }
-div.gantt_task_line.critical .gantt_task_progress {
-  background-color: #c800ff; }
+  border-color: #c800ff;
+}
 
+/* line 273, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
+div.gantt_task_line.critical .gantt_task_progress {
+  background-color: #c800ff;
+}
+
+/* line 279, plugins/easy_gantt/assets/stylesheets/easy_gantt/sass/_gantt_main.scss */
 .gantt_hor_scroll {
-  z-index: 1; }
+  z-index: 1;
+}
 
 @font-face {
   font-family: "Material Icons";
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/../../plugin_assets/easy_gantt/fonts/EasyMaterialIcons-Regular.eot);
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/../../plugin_assets/easy_gantt/fonts/EasyMaterialIcons-Regular.eot?#iefix) format("embedded-opentype"), url(/../../plugin_assets/easy_gantt/fonts/EasyMaterialIcons-Regular.woff) format("woff"), url(/../../plugin_assets/easy_gantt/fonts/EasyMaterialIcons-Regular.woff2) format("woff2"), url(/../../plugin_assets/easy_gantt/fonts/EasyMaterialIcons-Regular.ttf) format("truetype"), url(/../../plugin_assets/easy_gantt/fonts/EasyMaterialIcons-Regular.svg) format("svg");
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../../../fonts/EasyMaterialIcons-Regular.eot);
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../../../fonts/EasyMaterialIcons-Regular.eot?#iefix) format("embedded-opentype"), url(../../../fonts/EasyMaterialIcons-Regular.woff) format("woff"), url(../../../fonts/EasyMaterialIcons-Regular.woff2) format("woff2"), url(../../../fonts/EasyMaterialIcons-Regular.ttf) format("truetype"), url(../../../fonts/EasyMaterialIcons-Regular.svg) format("svg");
   font-weight: normal;
   font-style: normal; }

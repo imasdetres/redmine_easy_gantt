@@ -67,6 +67,18 @@ class EasyGanttProjectQuery < Query
     scope.to_a
   end
 
+  def entity_scope
+    Project.visible
+  end
+
+  def create_entity_scope(options={})
+    entity_scope.includes(options[:includes]).
+                 references(options[:includes]).
+                 preload(options[:preload]).
+                 where(statement).
+                 where(options[:conditions])
+  end
+
   def without_opened_project
     _opened_project = opened_project
     self.opened_project = nil

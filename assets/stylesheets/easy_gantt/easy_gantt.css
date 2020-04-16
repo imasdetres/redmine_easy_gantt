@@ -17,6 +17,10 @@
   }
 }
 
+body {
+  -webkit-print-color-adjust: exact !important;
+}
+
 .gantt_container {
   display: inline-block;
 }
@@ -652,5 +656,10 @@
   }
   .gantt_scale_line.gantt-print__scale-line .gantt_scale_cell{
     font-size: 12px;
+  }
+
+  .gantt_task_line.milestone-type > gantt_task_content{
+    background: black;
+
   }
 }

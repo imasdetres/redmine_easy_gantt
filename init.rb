@@ -2,7 +2,7 @@ Redmine::Plugin.register :easy_gantt do
   name 'Easy Gantt plugin'
   author 'Easy Software Ltd'
   description 'Cool gantt for redmine'
-  version '1.10'
+  version '1.12'
   url 'www.easyredmine.com'
   author_url 'www.easysoftware.cz'
 

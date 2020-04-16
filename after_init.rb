@@ -166,10 +166,10 @@ ActionDispatch::Reloader.to_prepare do
       }, global: true, require: :loggedin)
 
       # View personal level
-      pmap.permission(:view_personal_easy_gantt, {
-        easy_gantt_resources: [:global_data],
-        easy_resource_limits: [:index]
-      }, global: true, read: true)
+      # pmap.permission(:view_personal_easy_gantt, {
+      #   easy_gantt_resources: [:global_data],
+      #   easy_resource_limits: [:index]
+      # }, global: true, read: true)
 
       # Edit personal level
       pmap.permission(:edit_personal_easy_gantt, {

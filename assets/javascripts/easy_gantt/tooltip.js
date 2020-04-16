@@ -8,7 +8,12 @@ ysy.view.tooltip = $.extend(ysy.view.tooltip, {
     if (!this.instance) {
       this.instance = new ysy.view.ToolTip().init();
     }
-    return this.instance.reset(className, event, template, out);
+    return this.instance.set(className, event, template, out);
+  },
+  hide: function () {
+    if (this.instance)
+      return this.instance.hide();
+    return false;
   },
   changePos: function (event) {
     if (this.instance)
@@ -17,7 +22,7 @@ ysy.view.tooltip = $.extend(ysy.view.tooltip, {
 });
 ysy.view.taskTooltip = $.extend(ysy.view.taskTooltip, {
   timeout: 0,
-  $tooltip: null,
+  timeoutTime: 1000,
   phase: 1,
   /**
    * phase 1 mouse is out
@@ -26,35 +31,18 @@ ysy.view.taskTooltip = $.extend(ysy.view.taskTooltip, {
    */
   taskTooltipInit: function () {
     var self = this;
-    var showTaskTooltip = function (event) {
-      /**
-       * phase 3 tooltip display
-       */
-      if (self.phase !== 2) return;
-      var task = gantt._pull[gantt.locate(event)];
-      if (!task) return;
-      self.phase = 3;
-      var taskPos = $(event.target).offset();
-      self.$tooltip = ysy.view.tooltip.show("gantt-task-tooltip",
-          {left: event.pageX, top: taskPos.top + gantt.config.row_height},
-          ysy.view.templates.TaskTooltip,
-          self.taskTooltipOut(task));
-    };
-
     /**
-     * phase 2 mouse on, start timer 2s
+     * phase 2 mouse on, start timer 1s
      */
     $("#content")
         .on("mouseenter", ".gantt_task_content, .gantt_task_progress, .gantt-task-tooltip-area", function (e) {
           if (self.phase !== 1) return;
           ysy.log.debug("mouseenter", "tooltip");
+          if (e.buttons !== 0) return;
           self.phase = 2;
           // ysy.log.debug("e.which = "+e.which+" e.button = "+ e.button+" e.buttons = "+ e.buttons);
-          if (e.buttons !== 0) return;
           self.bindHiders(e.target);
-          self.timeout = setTimeout(function () {
-            showTaskTooltip(e)
-          }, 1000);
+          self.updatePos(e);
         });
 
   },
@@ -69,20 +57,71 @@ ysy.view.taskTooltip = $.extend(ysy.view.taskTooltip, {
      * set phase 1 mouse out
      */
     self.phase = 1;
+    self.lastPos = null;
     if (self.timeout) {
       clearTimeout(self.timeout);
     }
-    if (self.$tooltip) {
-      self.$tooltip[0].style.display = "none";//.hide();
+    if (ysy.view.tooltip.hide()) {
       event.target.removeEventListener("mouseleave", this.hideTooltip);
       event.target.removeEventListener("mousedown", this.hideTooltip);
       event.target.removeEventListener("mousemove", this.updatePos);
     }
   },
+  /**
+   * @param {MouseEvent} event
+   */
   updatePos: function (event) {
-    if (ysy.view.taskTooltip.phase !== 3) return;
-    ysy.view.tooltip.changePos({left: event.pageX});
+    var self = ysy.view.taskTooltip;
+    if (self.phase === 1) return;
+
+    var changed = false;
+    if (self.lastPos) {
+      if (Math.abs(self.lastPos.clientX - event.clientX) > 5) {
+        self.lastPos.clientX = event.clientX;
+        changed = true;
+      }
+      if (Math.abs(self.lastPos.clientY - event.clientY) > 5) {
+        self.lastPos.clientY = event.clientY;
+        changed = true;
+      }
+    } else {
+      self.lastPos = {clientX: event.clientX, clientY: event.clientY};
+      changed = true;
+    }
+    if (self.phase === 3 && changed) {
+      self.hideTooltip(event);
+      return;
+    }
+    self.lastPos.target = event.target;
+    if (changed) {
+      if (self.timeout) {
+        window.clearTimeout(self.timeout);
+      }
+      self.timeout = window.setTimeout(function () {
+        self.showTaskTooltip(self.lastPos)
+      }, self.timeoutTime);
+    }
   },
+  showTaskTooltip: function (event) {
+    var self = this;
+    /**
+     * phase 3 tooltip display
+     */
+    if (self.phase !== 2) return;
+    var task = gantt._pull[gantt.locate(event)];
+    if (!task) return;
+    self.phase = 3;
+    if (event.target.parentElement.parentElement === null) {
+      self.phase = 1;
+      return;
+    }
+    var taskPos = $(event.target).offset();
+    return ysy.view.tooltip.show("gantt-task-tooltip",
+        {clientX: event.clientX, clientY: event.clientY, top: taskPos.top + gantt.config.row_height},
+        ysy.view.templates.TaskTooltip,
+        self.taskTooltipOut(task));
+  },
+
   taskTooltipOut: function (task) {
     var issue = task.widget.model;
     var problemList = issue.getProblems();
@@ -129,51 +168,46 @@ ysy.view.taskTooltip = $.extend(ysy.view.taskTooltip, {
 });
 ysy.view.ToolTip = function () {
   ysy.view.Widget.call(this);
-  this.lastPos = {left: 0, top: 0};
 };
 ysy.main.extender(ysy.view.Widget, ysy.view.ToolTip, {
   name: "ToolTip",
   init: function () {
-    var $target = this.$target = $("<div id='gantt_tooltip' style='display: none'></div>").appendTo("body");
+    var $target = this.$target = $("<div id='gantt_tooltip' style='display: none'></div>").appendTo("#content");
     $target.on("mouseleave", function () {
       $target[0].style.display = "none";
     });
     ysy.view.onRepaint.push($.proxy(this.repaint, this));
     return this;
   },
-  reset: function (className, event, template, out) {
-    this.className = className;
-    this.event = event;
-    this.template = template;
+  set: function (className, event, template, out) {
+    this.className = className || this.className;
+    this.event = event || this.event;
+    this.template = template || this.template;
     this.outed = out;
     this.repaintRequested = true;
     return this.$target;
   },
+  hide: function () {
+    this.$target[0].style.display = "none";//.hide();
+    return true;
+  },
   changePos: function (event) {
-    if (event.left === undefined) {
-      this.lastPos = {left: event.pageX - 5, top: event.pageY - 5};
-      this.$target[0].style.cssText = "display: block; left: " + this.lastPos.left + "px; top: " + this.lastPos.top + "px";
-      // this.$target.css({left: event.pageX - 5, top: event.pageY - 5});
-    } else {
-      var changed = false;
-      if (Math.abs(this.lastPos.left - event.left) > 5) {
-        this.lastPos.left = event.left;
-        changed = true;
-      }
-      if (event.top !== undefined && Math.abs(this.lastPos.top - event.top) > 5) {
-        this.lastPos.top = event.top;
-        changed = true;
-      }
-      if (changed) {
-        this.$target[0].style.cssText = "display: block; left: " + this.lastPos.left + "px; top: " + this.lastPos.top + "px";
-      }
-      // this.$target.css({left: event.left, top: event.top});
+    var left = event.clientX;
+    var top = event.top;
+    if (event.clientY + this.elementHeight > window.innerHeight) {
+      top -= this.elementHeight + gantt.config.row_height + 4;
     }
+    if (event.clientX + this.elementWidth > window.innerWidth) {
+      left -= this.elementWidth;
+    }
+    this.$target[0].style.cssText = "display: block; left: " + left + "px; top: " + top + "px";
   },
   _repaintCore: function () {
     this.$target.html(Mustache.render(this.template, this.outed)); // REPAINT
     this.$target[0].style.display = "block";
     this.$target[0].className = 'gantt-tooltip ' + this.className;
+    this.elementWidth = this.$target.outerWidth();
+    this.elementHeight = this.$target.outerHeight();
     var event = this.event;
     if (event) {
       this.changePos(event);

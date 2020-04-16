@@ -5,7 +5,7 @@ module EasyGantt
       base.send(:include, InstanceMethods)
 
       base.class_eval do
-        if private_method_defined?(:query_class)
+        if method_defined?(:query_class) || private_method_defined?(:query_class)
           alias_method_chain :query_class, :easy_gantt
         end
       end

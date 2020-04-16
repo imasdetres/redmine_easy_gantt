@@ -943,6 +943,11 @@ dhtmlx.copy = function (object) {
       if (object instanceof t[i])
         result = i ? new t[i](object) : new t[i](); // first one is array
     }
+    if(moment.isMoment(object)){
+      result = moment(object);
+      result._isEndDate = object._isEndDate;
+      return result;
+    }
     for (i in object) {
       // HOSEK V
       if (i === "model" || i === "widget" || i === "columns" ) {
@@ -3605,8 +3610,8 @@ gantt._init_tasks_range = function(){
   this._get_tasks_data();
 
   var range = this.getSubtaskDates();
-  this._min_date = range.start_date;
-  this._max_date = range.end_date;
+  this._min_date = range.start_date || moment();
+  this._max_date = range.end_date || moment();
 
   if(this.config.start_date && +this.config.start_date < +this._min_date){
     this._min_date = this.date[unit + "_start"]( this.date.Date(this.config.start_date));

@@ -352,21 +352,33 @@ ysy.main.extender(ysy.view.Widget, ysy.view.GanttTask, {
     this.requestRepaint();
   },
   _constructParentUpdate: function (parentId) {
-    var parent_issue_id = null;
-    var fixed_version_id = null;
-    var project_id;
     if (typeof parentId !== "string") {
-      parent_issue_id = parentId;
+      var parent = gantt._pull[parentId];
+      if (!parent) return {};
+      var parentModel = parent.widget.model;
+      if (!parentModel) return {};
+      if (parentModel.fixed_version_id) {
+        return {
+          parent_issue_id: parentId,
+          fixed_version_id: parentModel.fixed_version_id,
+          project_id: parentModel.project_id
+        };
+      } else {
+        return {parent_issue_id: parentId, project_id: parentModel.project_id};
+      }
     } else if (ysy.main.startsWith(parentId, "p")) {
-      project_id = parseInt(parentId.substring(1));
+      return {
+        parent_issue_id: null, project_id: parseInt(parentId.substring(1)), fixed_version_id: null
+      };
     } else if (ysy.main.startsWith(parentId, "m")) {
-      fixed_version_id = parseInt(parentId.substring(1));
+      return {
+        parent_issue_id: null, fixed_version_id: parseInt(parentId.substring(1))
+      };
     } else if (parentId === "empty") {
-      project_id = ysy.settings.projectID;
+      return {
+        parent_issue_id: null, project_id: ysy.settings.projectID, fixed_version_id: null
+      };
     } else return null;
-    return {
-      parent_issue_id: parent_issue_id, project_id: project_id, fixed_version_id: fixed_version_id
-    }
   }
 });
 //##############################################################################

@@ -161,7 +161,7 @@ module EasyGanttHelper
               @query.columns.each do |c|
                 api.column do
                   api.name c.name
-                  api.value c.value(issue).to_s
+                  api.value gantt_format_column(issue, c, c.value(issue))
                 end
               end
             end
@@ -243,6 +243,8 @@ module EasyGanttHelper
     elsif value.is_a?(Float)
       locale = User.current.language.presence || ::I18n.locale
       number_with_precision(value, locale: locale).to_s
+    elsif value.is_a?(Array)
+      value.join(', ')
     else
       value.to_s
     end

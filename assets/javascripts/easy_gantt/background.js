@@ -9,10 +9,10 @@ ysy.view.getGanttBackground = function () {
     var defaultColor = "rgba(200, 200, 200, 0.25)";
     if (!window.getComputedStyle) return defaultColor;
     var styles = window.getComputedStyle(document.getElementsByTagName('body')[0]);
-    var colorString = styles.getPropertyValue('background-color');
-    if (colorString === "" || colorString === "rgb(255,255,255)" || colorString === "rgba(0, 0, 0, 0)") return defaultColor;
-    var colorSplit = colorString.split(", ");
-    var colorArray = [parseInt(colorSplit[0].substring(4)), parseInt(colorSplit[1]), parseInt(colorSplit[2])];
+    var colorString = styles.getPropertyValue('background-color') || "";
+    if (!colorString.match(/rgba?\([0-9, ]+\)/)) return defaultColor;
+    var colorSplit = colorString.replace(/^rgba?\(|\s+|\)$/g,'').split(',');
+    var colorArray = [parseInt(colorSplit[0]), parseInt(colorSplit[1]), parseInt(colorSplit[2])];
     var strongColorArray = [];
     var stronger = 3;
     for (var i = 0; i < 3; i++) {
@@ -86,10 +86,17 @@ ysy.view.getGanttBackground = function () {
 
           for (i = limits.fromX; i < limits.toX; i++) {
             width = widths[i];
-            var top = limits.fromY;
-            var lastWeekend = false;
+            var top = 0;
             var mDate = moment(cfg.trace_x[i]);
             var iDate = mDate.format("YYYY-MM-DD");
+            var lastWeekend = false;
+            var firstEntity = items[limits.fromY];
+            if (firstEntity.type !== "assignee") {
+              var assignee = ysy.data.assignees.getByID(firstEntity.widget.model.assigned_to_id || "unassigned");
+              if (assignee) {
+                lastWeekend = assignee.getMaxHours(iDate, mDate) === 0;
+              }
+            }
             for (var j = limits.fromY; j < limits.toY; j++) {
               if (items[j].type !== "assignee") continue;
               var hours = items[j].widget.model.getMaxHours(iDate, mDate);

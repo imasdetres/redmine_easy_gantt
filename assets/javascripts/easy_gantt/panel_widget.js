@@ -195,7 +195,14 @@ ysy.main.extender(ysy.view.Widget, ysy.view.AllButtons, {
     critical_help: {},
     print: {
       func: function () {
-        return ysy.pro.print.directPrint();
+        return ysy.pro.print.directPrint(this);
+      },
+      isOn: function () {
+        return ysy.pro.print.printPreparing;
+      },
+      forceRepaint:function () {
+        this.requestRepaint();
+        this.repaint();
       }
     },
     jump_today: {
